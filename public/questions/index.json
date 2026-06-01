@@ -1,0 +1,35 @@
+{
+  "version": "v3",
+  "app_name": "二等無人航空機操縦士 学科試験対策アプリ",
+  "total_questions": 300,
+  "chapters": [
+    {
+      "id": "ch1",
+      "file": "chapter1_rules.json",
+      "title": "第1章 無人航空機に関する規則",
+      "questions": 75,
+      "ratio": "約25%"
+    },
+    {
+      "id": "ch2",
+      "file": "chapter2_system.json",
+      "title": "第2章 無人航空機のシステム",
+      "questions": 135,
+      "ratio": "約45%"
+    },
+    {
+      "id": "ch3",
+      "file": "chapter3_pilot.json",
+      "title": "第3章 操縦者及び運航体制",
+      "questions": 30,
+      "ratio": "約10%"
+    },
+    {
+      "id": "ch4",
+      "file": "chapter4_risk.json",
+      "title": "第4章 運航上のリスク管理",
+      "questions": 60,
+      "ratio": "約20%"
+    }
+  ]
+}
