@@ -5,7 +5,7 @@ import { useProgressStore } from '../store/progressStore'
 const TOTAL_QUESTIONS = 300
 const PASS_ACCURACY = 0.8
 
-function buildCalendar(year: number, month: number, studyDays: Set<string>) {
+function buildCalendar(year: number, month: number) {
   const firstDay = new Date(year, month, 1).getDay() // 0=Sun
   const daysInMonth = new Date(year, month + 1, 0).getDate()
   const cells: (number | null)[] = []
@@ -76,7 +76,7 @@ export default function Progress() {
     return Math.ceil(weakCount / 15)
   }, [overallAccuracy, allStats])
 
-  const { cells } = buildCalendar(calYear, calMonth, studyDays)
+  const { cells } = buildCalendar(calYear, calMonth)
 
   const prevMonth = () => {
     if (calMonth === 0) { setCalYear(y => y - 1); setCalMonth(11) }
