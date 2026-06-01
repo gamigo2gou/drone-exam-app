@@ -1,13 +1,9 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { useProgressStore, type QuestionStat } from '../store/progressStore'
+import { useProgressStore } from '../store/progressStore'
 
 const TOTAL_QUESTIONS = 300
 const PASS_ACCURACY = 0.8
-
-function formatDate(iso: string) {
-  return iso.slice(0, 10)
-}
 
 function buildCalendar(year: number, month: number, studyDays: Set<string>) {
   const firstDay = new Date(year, month, 1).getDay() // 0=Sun
