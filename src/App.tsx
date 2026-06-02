@@ -7,6 +7,7 @@ import ExamHome from './pages/ExamHome'
 import ExamQuiz from './pages/ExamQuiz'
 import ExamResult from './pages/ExamResult'
 import Progress from './pages/Progress'
+import Admin from './pages/Admin'
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/exam/quiz" element={<ExamQuiz />} />
         <Route path="/exam/result" element={<ExamResult />} />
         <Route path="/progress" element={<Progress />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   )
