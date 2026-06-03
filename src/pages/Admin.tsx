@@ -307,7 +307,7 @@ export default function Admin() {
                 <div className="space-y-2">
                   {Object.entries(q.wrong_choice_reasons).map(([k, v]) => (
                     <div key={k} className="flex gap-2">
-                      <span className="shrink-0 text-xs font-bold text-slate-400 w-4">{k}.</span>
+                      <span className="shrink-0 text-xs font-bold text-slate-400 w-4">{LABELS[Number(k) - 1] ?? k}.</span>
                       <p className="text-xs text-slate-400 leading-relaxed">{v}</p>
                     </div>
                   ))}
