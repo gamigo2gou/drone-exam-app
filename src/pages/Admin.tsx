@@ -177,17 +177,32 @@ export default function Admin() {
 
       <div className="max-w-2xl mx-auto px-4">
 
-        {/* Progress bar */}
+        {/* Progress bar — クリックでその位置の問題にジャンプ */}
         <div className="py-3">
           <div className="flex justify-between text-xs text-slate-500 mb-1">
             <span>確認進捗</span>
             <span>{filteredReviewedCount} / {filtered.length} 問</span>
           </div>
-          <div className="h-1.5 bg-slate-700 rounded-full overflow-hidden">
+          <div
+            className="h-4 bg-slate-700 rounded-full overflow-hidden cursor-pointer group relative"
+            title="クリックで問題にジャンプ"
+            onClick={(e) => {
+              if (filtered.length === 0) return
+              const rect = e.currentTarget.getBoundingClientRect()
+              const ratio = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width))
+              setCurrentIndex(Math.min(filtered.length - 1, Math.floor(ratio * filtered.length)))
+            }}
+          >
             <div
               className="h-full bg-blue-500 rounded-full transition-all"
               style={{ width: filtered.length > 0 ? `${(filteredReviewedCount / filtered.length) * 100}%` : '0%' }}
             />
+            {/* カーソル位置インジケーター */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span className="text-[10px] text-slate-300 font-medium pointer-events-none select-none">
+                タップして問題にジャンプ
+              </span>
+            </div>
           </div>
         </div>
 
